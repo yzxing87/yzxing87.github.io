@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX", "output/HTML-CSS"],
+        tex2jax: {
+          <!--$表示行内元素，$$表示块状元素 -->
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+      });
+    </script>
+    <!--加载MathJax的最新文件， async表示异步加载进来 -->
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+    </script>       
+
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Invertible ISP</title>
@@ -75,6 +94,34 @@
                 <!-- (<sup>*</sup>Joint first authors) -->
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">                 
+                <!-- <div class="col-md-8 col-md-offset-2 text-center"> -->
+
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="https://yzxing87.github.io/">
+                            <img src="./InvISP_files/paper.png" height="120px"><br>
+                                Paper
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://yzxing87.github.io/TBA">
+                            <img src="./InvISP_files/youtube_icon_dark.png" height="120px"><br>
+                                Technical Video [Coming Soon]
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/yzxing87/Invertible-ISP">
+                            <img src="./InvISP_files/github_pad.png" height="120px"><br>
+                                Code
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+        </div>          
+        
         <div class="row" id="header_img">
             <figure class="col-md-8 col-md-offset-2">
             <img src="./InvISP_files/teaser.png" class="img-responsive" alt="overview">
@@ -93,6 +140,46 @@
             </div>
         </div>
 
+        <!-- <div class="row" id="header_img">
+            <figure class="col-md-8 col-md-offset-2">
+            <img src="./InvISP_files/result_01.png" class="img-responsive" alt="overview">
+                <figcaption>
+                </figcaption>
+            </figure>
+        </div> -->
+
+
+        
+        <div class="row" id="header_img">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results
+                </h3>
+            </div>
+            <figure class="col-md-8 col-md-offset-2">
+                <img src="./InvISP_files/result_01.png" class="img-responsive" alt="overview">
+                    <figcaption>
+                        <br />
+                        The qualitative comparison among UPI, CycleISP and our method. UPI and CyleISP synthesize RAW data from 8-bit compressed RGB, which is inevitable to suffer from the information loss of traditional ISP. Unlike theirs, our model forms a RAWRGB-RAW cycle and is inherently reversible to recover the realistic RAW image. The GT RAW image is visualized through bilinear demosaicing, and other RAW images are visualized through error maps. 
+                    </figcaption>
+            </figure>
+            
+        </div>
+        <div class="row" id="header_img">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Method
+                </h3>
+            </div>
+            <figure class="col-md-8 col-md-offset-2">
+                <img src="./InvISP_files/method.png" class="img-responsive" alt="overview">
+                    <figcaption>
+                        <br />
+                        Our Invertible ISP (InvISP) framework. InvISP is composed of both forward and inverse passes. In the forward pass, the Bayer RAW is first bilinearly demosaiced and then transformed to an RGB image by a stack of bijective functions $\{f_i\}^k_{i=0}$. Our model integrates a differentiable JPEG simulator to account for compression information lost. During the training time, to invert the ISP, the backward pass takes a compressed RGB image as input and reverses all the bijective functions and the bilinear demosaicing to obtain the original RAW image. Note that the backward pass takes real JPEG images as input at test time. We illustrate the details of the invertible block on the right. $r$, $s$, and $t$ are transformations defined in the bijective functions $\{f_i\}^k_{i=0}$.
+                    </figcaption>
+            </figure>
+            
+        </div>          
 <!--         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>                
@@ -120,36 +207,6 @@
             </div>
         </div> -->
 
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>                
-                    Downloads
-                </h3>                  
-                <!-- <div class="col-md-8 col-md-offset-2 text-center"> -->
-
-                    <ul class="nav nav-pills nav-justified">
-                        <li>
-                            <a href="https://yzxing87.github.io/">
-                            <img src="./InvISP_files/paper.png" height="120px"><br>
-                                Paper
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://yzxing87.github.io/TBA">
-                            <img src="./InvISP_files/youtube_icon_dark.png" height="120px"><br>
-                                Technical Video [Coming Soon]
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/yzxing87/Invertible-ISP">
-                            <img src="./InvISP_files/github_pad.png" height="120px"><br>
-                                Code
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <br>
-        </div>
 
 <!--         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center last">
