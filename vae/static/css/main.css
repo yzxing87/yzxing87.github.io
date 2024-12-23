@@ -1,0 +1,66 @@
+
+/* Import Bulma CSS framework and custom fonts */
+@import url('bulma.min.css');
+@import url('https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro');
+
+@media screen and (max-width: 768px) {
+    .columns {
+        flex-wrap: wrap;
+    }
+
+    .column {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .box {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Custom font settings */
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* Style for publication title */
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+/* Enhance button styles */
+.button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #00d1b2; /* Bulma primary color */
+  color: #fff;
+}
+
+/* Responsive video styling */
+.responsive-video {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Adjust teaser video styling */
+#teaser {
+  width: 100%;
+  height: auto;
+}
+
+/* Enhance footer styling */
+.footer {
+  background-color: #f5f5f5;
+  padding: 2rem 1.5rem;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+}
+
+/* ...existing code... */
